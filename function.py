@@ -91,14 +91,15 @@ def data_train_generate(data):
     scaler = MinMaxScaler()
     scaled_train = scaler.fit_transform(dummies)
     X_normalized = preprocessing.normalize(scaled_train, norm='l2')
+    
     columns = dummies.columns
     data_train = pd.DataFrame(X_normalized, columns=columns)
 
     data_train['status'] = 0
     data_train['status'] = y
-    data_train.replace({'status': {'Excluído':0,'Ativo':1,'Graduado':2}}, inplace=True, regex=True)
+    data_train.replace({'status': {'Excluído':0,'Ativo':2,'Graduado':1}}, inplace=True, regex=True)
 
-    data_train = data_train[(data_train["status"] == 0) | (data_train["status"] == 2)]
+    data_train = data_train[(data_train["status"] == 0) | (data_train["status"] == 1)]
 
     return data_train 
 
@@ -131,6 +132,8 @@ def train_and_SHAP(data_train):
     # explain the model's predictions using SHAP
     explainer = shap.TreeExplainer(clf)
     shap_values = explainer.shap_values(x)
+
+    st.write('Avaliação por atributo')
 
     # visualize the first prediction's explanation (use matplotlib=True to avoid Javascript)
     st_shap(shap.force_plot(explainer.expected_value[0], shap_values[0][0], x.iloc[0,:]))
