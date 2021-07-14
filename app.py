@@ -14,7 +14,7 @@ st.set_page_config(
 )
 
 PAGES = {
-    "Load Data": load,
+    "Inserção de Dados": load,
     "SHAP": shap_process,
     # "Exploratory": exploratory,
 }
@@ -30,8 +30,7 @@ def main():
 
     st.sidebar.markdown("## Release")
     st.sidebar.info(
-        "Aplicação de Desenvolvimento para identificação de atributos relevantes"
-        "em dados estudantis"
+        "Aplicação para identificação de atributos relevantes em dados educacionais"
     )
     st.sidebar.markdown("## Versão 1.0.0")
     st.sidebar.info(
