@@ -1,5 +1,5 @@
 from multiapp import MultiApp
-from pages import load, shap_process, exploratory  # import your app modules here
+from pages import load, shap_process, heatmap  # import your app modules here
 from function import *
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -16,7 +16,7 @@ st.set_page_config(
 PAGES = {
     "Inserção de Dados": load,
     "SHAP": shap_process,
-    # "Exploratory": exploratory,
+    "Heatmap": heatmap,
 }
 
 
