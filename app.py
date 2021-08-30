@@ -34,7 +34,7 @@ def main():
     )
     st.sidebar.markdown("## Versão 1.0.0")
     st.sidebar.info(
-        """ aplicação é parte do trabalho de conclusão do mestrado em Ciência da Computação da UFG - Fatores de impacto no desempenho acadêmico: um estudo de caso em cursos de computação. """
+        """ Aplicação é parte do trabalho de conclusão do mestrado em Ciência da Computação da UFG - Fatores de impacto no desempenho acadêmico: um estudo de caso em cursos de computação. """
     )
 
 
